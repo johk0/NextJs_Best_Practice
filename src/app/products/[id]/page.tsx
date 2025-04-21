@@ -2,7 +2,7 @@ import Button from "@/components/ui/Button"
 import Image from "next/image"
 import { Suspense } from "react"
 
-interface IProps {
+interface IParams {
     params: {
         id: string
     }
@@ -17,7 +17,7 @@ const fetchData = async (url: string): Promise<Product> => {
     const product = await data.json()
     return product;
 }
-const page = async ({ params }: IProps) => {
+const Page = async ({ params }: IParams) => {
 
     const { id } = params;
     const product: Product = await fetchData(`https://dummyjson.com/products/${id}`)
@@ -34,4 +34,4 @@ const page = async ({ params }: IProps) => {
     );
 };
 
-export default page;
+export default Page;
