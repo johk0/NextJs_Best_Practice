@@ -19,7 +19,7 @@ const fetchData = async (url: string): Promise<Product> => {
 }
 const page = async ({ params }: IProps) => {
 
-    const { id } = await params;
+    const { id } = params;
     const product: Product = await fetchData(`https://dummyjson.com/products/${id}`)
     console.log(product, "hi");
     return (
