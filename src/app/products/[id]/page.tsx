@@ -2,11 +2,7 @@ import Button from "@/components/ui/Button"
 import Image from "next/image"
 import { Suspense } from "react"
 
-interface IParams {
-    params: {
-        id: string
-    }
-}
+
 type Product = {
     id: string,
     title: string
@@ -17,7 +13,11 @@ const fetchData = async (url: string): Promise<Product> => {
     const product = await data.json()
     return product;
 }
-const Page = async ({ params }: IParams) => {
+const Page = async ({ params }: {
+    params: {
+        id: string
+    }
+}) => {
 
     const { id } = params;
     const product: Product = await fetchData(`https://dummyjson.com/products/${id}`)
