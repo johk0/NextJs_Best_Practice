@@ -1,8 +1,6 @@
 // 'use client'
-interface IProps {
 
-}
-const loading = ({ }: IProps) => {
+const loading = () => {
 
     return (
         <>

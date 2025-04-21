@@ -2,16 +2,14 @@
 import Link from "next/link";
 
 
-interface IProps {
 
-}
 const fetchData = async (url: string) => {
     const data = await fetch(url)
     const products = await data.json()
     console.log(products);
     return products;
 }
-const page = async ({ }: IProps) => {
+const page = async () => {
 
 
     const { products } = await fetchData('https://dummyjson.com/products')

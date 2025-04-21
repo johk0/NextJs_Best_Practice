@@ -1,9 +1,7 @@
 
 'use client'
-interface IProps {
 
-}
-const error = ({ }: IProps) => {
+const error = () => {
 
     return (
         <>

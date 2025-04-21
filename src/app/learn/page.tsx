@@ -1,7 +1,5 @@
-interface IProps {
 
-}
-const page = ({ }: IProps) => {
+const page = () => {
 
     return (
         <>
