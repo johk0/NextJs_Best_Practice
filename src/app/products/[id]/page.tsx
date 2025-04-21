@@ -14,12 +14,12 @@ const fetchData = async (url: string): Promise<Product> => {
     return product;
 }
 const Page = async ({ params }: {
-    params: {
+    params: Promise<{
         id: string
-    }
+    }>
 }) => {
 
-    const { id } = params;
+    const { id } = await params;
     const product: Product = await fetchData(`https://dummyjson.com/products/${id}`)
     console.log(product, "hi");
     return (
